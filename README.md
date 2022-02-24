@@ -1,4 +1,4 @@
-# auto-time-logger
+# chrome-expressions-kit
 plugin for auto track tome to several tome trackers
 
 # Development
