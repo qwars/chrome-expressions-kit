@@ -1,7 +1,7 @@
 # chrome-expressions-kit
 plugin for auto track tome to several tome trackers
 
-# Development
+## Development
 
 `yarn` - Развертывание проекта
 
@@ -11,7 +11,7 @@ plugin for auto track tome to several tome trackers
 
 Изучаем [Imba](https://v1.imba.io)
 
-# Добавление Chrome Extension
+## Добавление Chrome Extension
 
 > NOTE: Предварительно `yarn develop`
 
