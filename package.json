@@ -1,0 +1,37 @@
+{
+    "name": "Develop-Chrome-expression",
+    "version": "1.0.0",
+    "description": "Набор данных для разработки приложений chrome-expression",
+    "main": "background.js",
+    "author": "Александр Селюнин <aka.qwars@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "develop": "webpack watch --mode development --devtool source-map --hot",
+        "build": "webpack --mode production"
+    },
+    "devDependencies": {
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^10.2.4",
+        "css-loader": "^6.6.0",
+        "css-minimizer-webpack-plugin": "^3.4.1",
+        "file-loader": "^6.2.0",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
+        "markdown-loader": "^8.0.0",
+        "mini-css-extract-plugin": "^2.5.3",
+        "path-browserify": "^1.0.1",
+        "postcss": "^8.4.6",
+        "postcss-loader": "^6.2.1",
+        "postcss-preset-env": "^7.4.0",
+        "stylus": "^0.56.0",
+        "stylus-loader": "^6.2.0",
+        "webpack": "^5.69.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4",
+        "webpack-extension-manifest-plugin": "^0.8.0"
+    },
+    "dependencies": {
+        "imba": "^1.5.2"
+    }
+}
