@@ -3,10 +3,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
-const WebpackExtensionManifestPlugin = require("webpack-extension-manifest-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
+
+const MetaTags = { author: "Alexandr Selunin; aka.qwars@gmail.com" };
 
 module.exports = {
     context:  __dirname + '/develop',
@@ -25,13 +26,15 @@ module.exports = {
             title: 'Exptession',
             filename: 'popup.html',
             template: 'popup.html',
-            inject: false
+            inject: false,
+	    meta: Object.assign({ viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' }, MetaTags )
         }),
         new HtmlWebpackPlugin({
             title: 'Exptession',
             filename: 'options.html',
             template: 'options.html',
-            inject: false
+            inject: false,
+	    meta: Object.assign({ viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' }, MetaTags )
         }),
         new MiniCssExtractPlugin({ filename: './styleshets/main.css' }),
         new CopyWebpackPlugin({
@@ -50,24 +53,12 @@ module.exports = {
     module: {
 	rules: [
             {
-                test: /\.md$/,
-                use: [
-                    {
-                        loader: "html-loader",
-                    },
-                    {
-                        loader: "markdown-loader",
-                    },
-                ],
-            },
-            {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components|javascripts)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'],
-                        pugins: [ "@babel/plugin-proposal-class-properties"]
+                        presets: ['@babel/preset-env']
                     }
                 }
             },
